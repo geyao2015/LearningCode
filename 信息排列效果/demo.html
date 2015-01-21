@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>信息列表页Demo</title>
+
+<style type="text/css">
+*{
+	margin:0px;
+	padding:0px
+}
+body{
+	font-family:"微软雅黑";
+	font-size:14px;
+}
+a{
+	text-decoration:none;/*去掉下划线*/		
+}
+ul,li{ list-style:none;}
+#box{
+	height:auto;
+	width:550px;
+	border:1px solid #aaa;
+	margin:0 auto;
+	overflow:none;
+}
+.top{
+	height:40px;
+}
+.top a{
+	height:16px;
+	width:16px;
+	display:block;
+	/*border:1px solid red;*/
+	float:right;
+	margin:5px;	
+}
+.btn-list-on{
+	background:#fff url(images/btns.jpg) no-repeat -21px 0px;/*背景色及背景图案的填充*/
+}
+.btn-list-off{
+	background:#fff url(images/btns.jpg) no-repeat -38px 0px;
+}
+.btn-car-on{
+	background:#fff url(images/btns.jpg) no-repeat -21px -34px;
+}
+.btn-car-off{
+	background:#fff url(images/btns.jpg) no-repeat -38px -32px;
+}
+#box ul li{
+	height:auto;
+	width:164px;
+	border:1px solid #aaa;
+	list-style:none;/*去掉列表的小黑点*/
+	float:left;
+	margin:5px;
+}
+.a-img{
+	height:164px;
+	width:164px;
+	display:block;	
+    overflow:hidden;
+}
+.small{
+	height:50px;
+	width:50px;
+	float:left;
+	margin:5px;
+	
+}
+
+p a,p span{
+	display:block;
+	line-height:20px;
+	padding-left:10px;	
+	
+}
+.bottom{
+	height:40px;
+	line-height:40px;	
+	text-align:center;
+	background-color:#ccc;
+}
+
+</style>
+
+<script type="text/javascript">
+	window.onload = function(){
+		
+		//获取按钮
+		var listBtn=document.getElementById("btn1");
+		var carBtn=document.getElementById("btn2");
+		var img=document.getElementsByTagName("img");
+		
+		listBtn.onclick=function(){
+			//改变按钮的class值
+			listBtn.className = "btn-list-on";
+			carBtn.className = "btn-car-off";
+			
+			//改变每一个图片的路径以及它的父节点的class的值
+			for(var i=0;i<img.length;i++){
+				img[i].src="images/small.jpg";	
+				img[i].parentNode.className = "a-img small";	
+			}
+				
+		}	
+		carBtn.onclick=function(){
+			//改变按钮的class值
+			listBtn.className = "btn-list-off";
+			carBtn.className = "btn-car-on";
+			
+			//改变每一个图片的路径以及它的父节点的class的值
+			for(var i=0;i<img.length;i++){
+				img[i].src="images/big.jpg";	
+				img[i].parentNode.className = "a-img";	
+			}
+				
+		}	
+	}
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div class="top">
+    	<a href="#" id="btn1" title="列表模式" class="btn-list-off"></a>
+      	<a href="#" id="btn2" title="卡片模式" class="btn-car-on"></a>
+    </div>
+    <ul>
+    	<li>
+        	<div class="con">
+        	<a href="#" class="a-img"><img src="images/big.jpg" /></a>
+            <p>
+            	<a href="#">吉林</a>
+                <span>辽宁</span>
+                <span>23个共同好友</span>
+            </p>
+            <div class="bottom" >未分组的好友</div>
+            </div>
+            
+        </li>
+       <li>
+        	<div class="con">
+        	<a href="#" class="a-img"><img src="images/big.jpg" /></a>
+            <p>
+            	<a href="#">吉林</a>
+                <span>辽宁</span>
+                <span>23个共同好友</span>
+            </p>
+            <div class="bottom" >未分组的好友</div>
+            </div>
+            
+        </li><li>
+        	<div class="con">
+        	<a href="#" class="a-img"><img src="images/big.jpg" /></a>
+            <p>
+            	<a href="#">吉林</a>
+                <span>辽宁</span>
+                <span>23个共同好友</span>
+            </p>
+            <div class="bottom" >未分组的好友</div>
+            </div>
+            
+        </li><li>
+        	<div class="con">
+        	<a href="#"class="a-img"><img src="images/big.jpg" /></a>
+            <p>
+            	<a href="#">吉林</a>
+                <span>辽宁</span>
+                <span>23个共同好友</span>
+            </p>
+            <div class="bottom" >未分组的好友</div>
+            </div>
+            
+        </li><li>
+        	<div class="con">
+        	<a href="#"class="a-img"><img src="images/big.jpg" /></a>
+            <p>
+            	<a href="#">吉林</a>
+                <span>辽宁</span>
+                <span>23个共同好友</span>
+            </p>
+            <div class="bottom" >未分组的好友</div>
+            </div>
+            
+        </li><li>
+        	<div class="con">
+        	<a href="#"class="a-img"><img src="images/big.jpg" /></a>
+            <p>
+            	<a href="#">吉林</a>
+                <span>辽宁</span>
+                <span>23个共同好友</span>
+            </p>
+            <div class="bottom" >未分组的好友</div>
+            </div>
+            
+        </li>
+    </ul>
+</div>
+</body>
+</html>
