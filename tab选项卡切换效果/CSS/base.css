@@ -1,0 +1,63 @@
+*{margin: 0;
+padding: 0;
+list-style: none;
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+}
+.notice{
+    width: 298px;
+    height: 98px;
+    margin: 12px;
+    border: 1px solid #eee;
+
+}
+.notice-tit{
+    height: 27px;
+    position: relative;
+    background: #F7F7F7;
+}
+
+.notice-tit ul{
+    /*position: absolute;*//*定义了绝对位置就会出错*/
+    width: 301px;
+    left: -1px;
+}
+.notice-tit li{
+    float: left;
+    width: 58px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    overflow: hidden;
+    background: #FFF;
+    padding: 0 1px;
+    border-bottom: 1px solid #eee;
+}
+.notice-tit li.select{
+    background: #FFF;
+    border-bottom-color: #FFFFFF;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    padding: 0;
+    font-weight: bolder;
+}
+
+.notice li a:link,.notice li a:visited,{
+    text-decoration: none;
+    color: red;
+}
+.notice li a:hover{
+    color: #f90;
+}
+
+.notice-con .mod{
+    margin: 10px 10px 10px 19px;
+}
+.notice-con .mod ul li{
+    float: left;
+    width: 134px;
+    height: 25px;
+    overflow: hidden;
+}
