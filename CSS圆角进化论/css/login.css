@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* common style */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif, "宋体";
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #04309b;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.txt_align_c {
+    text-align: center;
+}
+
+.txt_align_r {
+    text-align: right;
+}
+
+.margin_r_10 {
+    margin-right: 10px;
+}
+
+.line-height_24 {
+    line-height: 24px;
+}
+
+#wrap {
+    width: 800px;
+    margin: 40px auto;
+}
+
+#header, #mainbody, #footer {
+    width: 100%;
+    overflow: hidden;
+}
+
+#header h1 {
+    background: url(../images/logo.gif) no-repeat;
+    height: 43px;
+    width: 200px;
+    float: left;
+}
+
+/*背景图像实现固定宽度圆角*/
+.topnav {
+    float: right;
+    width: 595px;
+    margin-top: 5px;
+}
+
+.top_radius {
+    width: 100%;
+    overflow: hidden;
+    background: url(../images/t_radius_595.gif) no-repeat;
+    height: 3px;
+}
+
+.btm_radius {
+    width: 100%;
+    overflow: hidden;
+    background: url(../images/b_radius_595.gif) no-repeat;
+    height: 3px;
+}
+
+.content {
+    background: #ebf3ff;
+    padding: 5px;
+    position: relative;
+}
+
+.content p {
+    color: #d0ccda;
+}
+
+.content p a {
+    margin: 0 5px;
+}
+
+/*背景图像实现宽度、高度自适应圆角*/
+.l_top_radius, .r_top_radius, .l_btm_radius, .r_btm_radius {
+    width: 4px;
+    height: 3px;
+    position: absolute;
+}
+
+.l_top_radius {
+    background: url(../images/l_top_radius.gif) no-repeat;
+    left: 0;
+    top: 0;
+}
+
+.r_top_radius {
+    background: url(../images/r_top_radius.gif) no-repeat;
+    right: 0;
+    top: 0;
+}
+
+.l_btm_radius {
+    background: url(../images/l_btm_radius.gif) no-repeat;
+    left: 0;
+    bottom: 0;
+}
+
+.r_btm_radius {
+    background: url(../images/r_btm_radius.gif) no-repeat;
+    right: 0;
+    bottom: 0;
+}
+
+#mainbody {
+    margin-top: 22px;
+}
+
+.left {
+    float: left;
+}
+
+/*CSS2.0+标签实现圆角--登录模块外框*/
+.right {
+    float: right;
+    width: 346px;
+}
+
+.radius_border_1 {
+    margin: 0 2px;
+    height: 1px;
+    /*background: #acc3e3;*/
+}
+
+.radius_border_2 {
+    margin: 0 1px;
+    height: 1px;
+    background: #edf6ff;
+    border-left: 1px solid #acc3e3;
+    border-right: 1px solid #acc3e3;
+}
+
+.loginbox {
+    background: #edf6ff;
+    border-left: 1px solid #acc3e3;
+    border-right: 1px solid #acc3e3;
+    padding: 20px;
+}
+
+.loginbox h2 {
+    color: #28456f;
+    font-size: 14px;
+}
+
+.loginbox ul {
+    margin-top: 10px;
+}
+
+.loginbox li {
+    margin-bottom: 10px;
+}
+
+/*CSS3.0圆角属性实现表单元素圆角*/
+.loginbox li input {
+    border: 1px solid #9dadc6;
+    border-radius: 2px;
+    height: 32px;
+    padding: 0 5px;
+    color: #888;
+    width: 292px;
+}
+
+.loginbox li input.account {
+    width: 182px;
+    border-right: 1px solid #d5deed;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /*输入框渐变属性；
+    *针对不同浏览器内核的私有前缀，主要是对老版本的浏览器
+    */
+    background: -moz-linear-gradient(top, #ddd 0%, #eee 10%, #fff 20%);
+    background: -webkit-linear-gradient(top, #ddd 0%, #eee 10%, #fff 20%);
+    background: -ms-linear-gradient(top, #ddd 0%, #eee 10%, #fff 20%);
+}
+
+.loginbox li input.mail_btn {
+    width: 110px;
+    height: 34px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: url(../images/select.gif) 90px center no-repeat #fbfbfb;
+    color: #504c4d;
+    text-align: left;
+    cursor: pointer;
+}
+
+#footer {
+    margin-top: 27px;
+}
+
+#footer p {
+    line-height: 24px;
+    color: #888;
+}
+
+#footer .content p {
+    color: #d0ccda;
+}
