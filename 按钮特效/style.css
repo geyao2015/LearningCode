@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #333;
+}
+
+.box {
+    width: 800px;
+    height: 280px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.box .link {
+    width: 205px;
+    height: 280px;
+    float: left;
+    margin: 0 20px;
+}
+
+.link .icon {
+    display: inline-block;
+    width: 100%;
+    height: 190px;
+    /*动画变换过渡属性*/
+    transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
+.link-miss .icon {
+    background: url("./images/mission.png") no-repeat center center;
+}
+
+.link-play .icon {
+    background: url("./images/play.png") no-repeat center center;
+}
+
+.link-touch .icon {
+    background: url("./images/touch.png") no-repeat center center;
+}
+
+/*用了CSS3新增的transform属性实现旋转*/
+.link .icon:hover {
+    transform: rotate(360deg) scale(1.2);
+    -ms-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -o-transform: rotate(360deg) scale(1.2);
+}
+
+.button {
+    display: block;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: #2dcb70;
+    font-family: "宋体", "Arial", "sans-serif";
+    font-weight: bolder;
+    border: 2px solid rgba(255, 255, 255, 0.6); /*可以定义边框的透明度*/
+    padding-left: 20px;
+    margin: 0 auto;
+    position: relative;
+    /*定义边框自适应，也可以不这样设置-直接计算好宽度和高度等*/
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+
+    background: url("./images/arrows.png") no-repeat 100px center;
+
+    /*动画箭头及边框变亮特效平缓滑过*/
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.button:hover {
+    border: 2px solid rgba(255, 255, 255, 1);
+    background: url("./images/arrows.png") no-repeat 120px center;
+}
+
+/*线条滑动效果*/
+.button .line {
+    display: block;
+    position: absolute;
+    background: none;
+}
+
+.button:hover .line {
+    background: #fff;
+
+    /*动画边框特效平缓滑过*/
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.button .line-top {
+    height: 2px;
+    width: 0;
+    left: -160px;
+    top: -2px;
+
+}
+
+.button:hover .line-top {
+    width: 100%;
+    left: -2px;
+}
+
+.button .line-right {
+    width: 2px;
+    height: 0;
+    right: -2px;
+    top: -60px;
+}
+
+.button:hover .line-right {
+    height: 100%;
+    top: -2px;
+}
+
+.button .line-left {
+    width: 2px;
+    height: 0;
+    left: -2px;
+    bottom: -60px;
+}
+
+.button:hover .line-left {
+    height: 100%;
+    bottom: -2px;
+}
+
+.button .line-bottom {
+    height: 2px;
+    width: 0;
+    right: -160px;
+    bottom: -2px;
+}
+
+.button:hover .line-bottom {
+    width: 100%;
+    right: -2px;
+}
+
+/*提示框效果*/
+.tip{
+    position: absolute;
+    padding:0 14px ;
+    height: 35px;
+    line-height: 35px;
+    background: #2dcb70;
+    color: #fff;
+    font-size: 18px;
+    margin: 0 auto;
+
+    border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+
+    top: 100px;
+    opacity: 0;/*透明度*/
+}
+.tip em{
+    font-style: normal;
+}
+
+.tip span{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    /*用span标签做三角形*/
+    border: 7px solid transparent ;/*设置透明不可见*/
+    border-top-color:#2dcb70 ;/*三角形朝下，故顶部颜色同上面标签的颜色*/
+
+    position: absolute;
+    top: 35px;
+    /*设置三角形居中*/
+    left: 50%;
+    margin-left:-3.5px;
+}
