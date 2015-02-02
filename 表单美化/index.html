@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>表单美化</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body>
+<!--单选按钮开始-->
+<div class="type">
+    <!--<form action="#" method="post" name="typeForm">-->
+    <!--<balel>配送类型：</balel>-->
+    <!--<input type="radio" name="type" checked="checked" /><label>全部</label>-->
+    <!--<input type="radio" name="type"/><label>京东配送</label>-->
+    <!--<input type="radio" name="type"/><label>第三方配送</label>-->
+    <!---->
+    <!--</form>-->
+
+    <dl id="type">
+        <dt>配送方式：</dt>
+        <dd class="selected"><a href="#" onclick="show(0)"><b ></b>全部</a></dd>
+        <dd><a href="#" onclick="show(1)"><b></b>京东配送</a></dd>
+        <dd><a href="#" onclick="show(2)"><b></b>第三方配送</a></dd>
+    </dl>
+</div>
+<!--单选按钮结束-->
+<!--复选按钮开始-->
+<div class="typeList">
+    <form action="#" method="post">
+        <ul id="checkList">
+            <li  class="selected"><input onclick="checklist(this)" type="checkbox" id="01" /><b></b><label for="01">选项1</label></li>
+            <li onclick="checklist()"><input type="checkbox" id="02"/><b></b><label for="02">选项2</label></li>
+            <li onclick="checklist()"><input type="checkbox" id="03"/><b></b><label for="03">选项3</label></li>
+            <li onclick="checklist()"><input type="checkbox" id="04"/><b></b><label for="04">选项4</label></li>
+        </ul>
+    </form>
+
+</div>
+<!--复选按钮结束-->
+</body>
+</html>

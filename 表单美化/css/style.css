@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    font: 12px/22px "微软雅黑";
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+
+}
+
+.type {
+    width: 400px;
+    height: 32px;
+    border: 1px solid #dfdfdf;
+    margin: 30px auto;
+}
+
+.type dl {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 15px;
+}
+
+.type dt {
+    float: left;
+}
+
+.type dd {
+    float: left;
+    margin: 0 10px 0 8px;
+}
+
+.type dd a {
+    display: block;
+    position: relative;
+    padding-left: 23px;
+}
+
+.type dd a:hover {
+    color: #c00;
+    text-decoration: underline;
+}
+
+.type dd b {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/radiobutton.gif") no-repeat -14px -18px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
+.type dd a:hover b{
+    background: url("../images/radiobutton.gif") no-repeat -14px -118px;
+}
+
+.type .selected b,.type .selected a:hover b{
+    background: url("../images/radiobutton.gif") no-repeat -14px -218px;
+}
+
+/*复选按钮美化*/
+.typeList{
+    width: 540px;
+    height: 30px;
+    margin: 50px auto;
+    border: 1px solid #dfdfdf;
+    border-width: 1px 0;
+}
+.typeList ul {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 15px;
+}
+.typeList ul li {
+    list-style: none;
+    float: left;
+    margin-left: 12px;
+    position: relative;
+}
+.typeList ul li input{
+    display: none;
+}
+
+.typeList ul li b{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url("../images/checkbox.gif") no-repeat -12px -18px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+.typeList ul li label{
+    margin-left: 23px;
+}
+.typeList ul li:hover b{
+    background-position: -12px -118px;
+}
+.typeList ul .selected b,.typeList ul .selected:hover b{
+    background-position: -12px -218px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
