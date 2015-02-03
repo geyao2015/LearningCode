@@ -19,24 +19,73 @@
 
     <dl id="type">
         <dt>配送方式：</dt>
-        <dd class="selected"><a href="#" onclick="show(0)"><b ></b>全部</a></dd>
+        <dd class="selected"><a href="#" onclick="show(0)"><b></b>全部</a></dd>
         <dd><a href="#" onclick="show(1)"><b></b>京东配送</a></dd>
         <dd><a href="#" onclick="show(2)"><b></b>第三方配送</a></dd>
     </dl>
 </div>
 <!--单选按钮结束-->
+
 <!--复选按钮开始-->
 <div class="typeList">
     <form action="#" method="post">
         <ul id="checkList">
-            <li  class="selected"><input onclick="checklist(this)" type="checkbox" id="01" /><b></b><label for="01">选项1</label></li>
-            <li onclick="checklist()"><input type="checkbox" id="02"/><b></b><label for="02">选项2</label></li>
-            <li onclick="checklist()"><input type="checkbox" id="03"/><b></b><label for="03">选项3</label></li>
-            <li onclick="checklist()"><input type="checkbox" id="04"/><b></b><label for="04">选项4</label></li>
+            <li onclick="checklist(0)" class="selected"><input type="checkbox" id="01"/><b></b><label
+                    for="01">选项1</label></li>
+            <li onclick="checklist(1)"><input type="checkbox" id="02"/><b></b><label for="02">选项2</label></li>
+            <li onclick="checklist(2)"><input type="checkbox" id="03"/><b></b><label for="03">选项3</label></li>
+            <li onclick="checklist(3)"><input type="checkbox" id="04"/><b></b><label for="04">选项4</label></li>
         </ul>
     </form>
 
 </div>
 <!--复选按钮结束-->
+
+<!--文本框美化开始-->
+<div class="contact">
+    <form class="contact_form" action="#" method="post" name="contact_form">
+        <ul>
+            <li>
+                <h2>联系我们</h2>
+                <span class="required_notification">* 表示必填项</span>
+            </li>
+            <li>
+                <label for="name">姓名:</label>
+                <input type="text" placeholder="Sunbest" required/>
+                <span class="form_hint">正确格式为：6~18个字符，可使用字母、数字、下划线，需以字母开头</span>
+            </li>
+
+            <li>
+                <button class="submit" type="submit">提交</button>
+            </li>
+        </ul>
+    </form>
+</div>
+<!--文本框美化结束-->
+<!--下拉列表美化开始-->
+<div id="Layer">
+    <div class="province">
+        <strong>送货至</strong>
+        <span id="selectProvince">北京</span>
+        <ul id="allProvince" class="show">
+            <li><b>A</b><a href="javascript:void(0);">安徽</a></li>
+            <li><b>B</b><a href="javascript:void(0);">北京</a></li>
+            <li><b>C</b><a href="javascript:void(0);">重庆</a></li>
+            <li><b>F</b><a href="javascript:void(0);">福建</a></li>
+            <li><b>G</b><a href="javascript:void(0);">广东</a><a href="javascript:void(0);">广西</a></li>
+            <li><b>H</b><a href="javascript:void(0);">河北</a><a href="javascript:void(0);">河南</a><a href="javascript:void(0);">黑龙江</a></li>
+            <li><b>J</b><a href="javascript:void(0);">吉林</a><a href="javascript:void(0);">江苏</a></li>
+            <li><b>L</b><a href="javascript:void(0);">辽宁</a></li>
+            <li><b>N</b><a href="javascript:void(0);">内蒙古</a></li>
+            <li><b>Q</b><a href="javascript:void(0);">青海</a></li>
+            <li><b>S</b><a href="javascript:void(0);">上海</a><a href="javascript:void(0);">山东</a></li>
+            <li><b>T</b><a href="javascript:void(0);">天津</a></li>
+            <li><b>X</b><a href="javascript:void(0);">新疆</a></li>
+            <li><b>Y</b><a href="javascript:void(0);">云南</a></li>
+            <li><b>Z</b><a href="javascript:void(0);">浙江</a></li>
+        </ul>
+    </div>
+</div>
+<!--下拉列表美化结束-->
 </body>
 </html>

@@ -56,38 +56,41 @@ a {
     left: 0;
 }
 
-.type dd a:hover b{
+.type dd a:hover b {
     background: url("../images/radiobutton.gif") no-repeat -14px -118px;
 }
 
-.type .selected b,.type .selected a:hover b{
+.type .selected b, .type .selected a:hover b {
     background: url("../images/radiobutton.gif") no-repeat -14px -218px;
 }
 
 /*复选按钮美化*/
-.typeList{
+.typeList {
     width: 540px;
     height: 30px;
     margin: 50px auto;
     border: 1px solid #dfdfdf;
     border-width: 1px 0;
 }
+
 .typeList ul {
     height: 30px;
     line-height: 30px;
     padding-left: 15px;
 }
+
 .typeList ul li {
     list-style: none;
     float: left;
     margin-left: 12px;
     position: relative;
 }
-.typeList ul li input{
+
+.typeList ul li input {
     display: none;
 }
 
-.typeList ul li b{
+.typeList ul li b {
     width: 20px;
     height: 20px;
     display: block;
@@ -96,28 +99,167 @@ a {
     top: 6px;
     left: 0;
 }
-.typeList ul li label{
+
+.typeList ul li label {
     margin-left: 23px;
 }
-.typeList ul li:hover b{
+
+.typeList ul li:hover b {
     background-position: -12px -118px;
 }
-.typeList ul .selected b,.typeList ul .selected:hover b{
+
+.typeList ul .selected b, .typeList ul .selected:hover b {
     background-position: -12px -218px;
 }
 
+/*文本框美化*/
+.contact {
+    width: 700px;
+    height: auto;
+    background: #f6f6f6;
+    margin: 40px auto;
+    padding: 10px;
+}
 
+.contact *:focus {
+    outline: none; /*去掉浏览器默认的选择文本框时的样式*/
+}
 
+.contact ul {
+    width: 700px;
+}
 
+.contact ul li {
+    border-bottom: 1px solid #dfdfdf;
+    list-style-type: none;
+    padding: 12px;
+}
 
+.contact ul li label {
+    width: 120px;
+    display: inline-block;
+    float: left;
+}
 
+.contact ul li input[type=text] {
+    width: 220px;
+    height: 20px;
+    border: 1px solid #aaa;
+    padding: 3px 8px;
+    background: url("../images/red_asterisk.png") no-repeat #fff 98%;
+    border-radius: 5px;
+}
 
+.contact ul li input:focus {
+    border-color: #c00;
+    background-image: url("../images/invalid.png");
+    padding-right: 70px;
+}
 
+.contact ul li input[type=text] {
+    -o-transition: padding .25s;
+    -moz-transition: padding .25s;
+    -webkit-transition: padding .25s;
+    -ms-transition: padding .25s;
+}
 
+/*下拉菜单美化*/
+/*body {*/
+    /*font: 13px/26px "微软雅黑";*/
+    /*background: #666666;*/
+/*}*/
 
+div, ul, li {
+    margin: 0;
+    padding: 0;
+}
 
+a {
+    color: #000;
+    text-decoration: none;
+    line-height: 30px;
+    padding: 0 10px;
+}
 
+a:hover {
+    color: #C00;
+}
 
+#Layer {
+    width: 500px;
+    height: 326px;
+    border: 3px solid #333333;
+    background: #FFF;
+    position: absolute;
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*margin: -163px 0 0 -250px;*/
+}
+
+.province {
+    width: 320px;
+    height: 42px;
+    background: #C00;
+    margin: 80px auto;
+    padding-left: 10px;
+    position: relative;
+}
+
+.province strong {
+    width: 48px;
+    height: 42px;
+    color: #FFF;
+    line-height: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    float: left;
+}
+
+.province span {
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #999;
+    background: #FFF url(../images/province_sprites.png) no-repeat 189px -2px;
+    display: block;
+    float: left;
+    margin-top: 8px;
+    padding-left: 4px;
+    cursor: pointer;
+}
+
+.province ul {
+    width: 328px;
+    height: auto;
+    background: #FFF;
+    border: 1px solid #dfdfdf;
+    border-bottom: none;
+    clear: both;
+    position: absolute;
+    left: 0;
+    top: 42px;
+    display: none;
+}
+
+.province ul li {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #dfdfdf;
+    padding-left: 10px;
+}
+
+.province ul li b {
+    font-weight: bold;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.show {
+    display: block;
+}
 
 
 
