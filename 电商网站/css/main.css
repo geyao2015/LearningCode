@@ -1,0 +1,74 @@
+/*公用*/
+.comWidth {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.leftArea {
+    float: left;
+}
+
+.rightArea {
+    float: right;
+}
+
+a {
+    color: #666666;
+    text-decoration: none;
+}
+
+/*topBar*/
+.topBar {
+    height: 31px;
+    background-color: #f7f7f7;
+    line-height: 31px;
+}
+
+.collection {
+    background: url("../images/icon/collection.jpg") no-repeat left center;
+    padding-left: 19px;
+    font-weight: bold;
+}
+
+.topBar a:hover {
+    color: #f00;
+}
+
+/*logo*/
+.logoBar {
+    height: 85px;
+    background-color: #1d7ad9;
+}
+
+.logo {
+    padding: 13px 0 0 41px;
+    float: left;
+}
+
+/*search*/
+.search-box {
+    float: left;
+    width: 430px;
+    height: 50px;
+    padding: 30px 0 0 10px;
+    /*border: 13px solid #f00;*/
+    /*margin-top: 23px;*/
+}
+
+.search-text {
+    width: 350px;
+    height: 35px;
+    padding: 0 5px;
+
+}
+.search-btn{
+    width: 70px;
+    height: 35px;
+    font-size:14px;
+    font-family: "Microsoft YaHei","微软雅黑";
+    background-color: #FF8C00;
+    color: #fff;
+}
+.shopCar {
+    float: right;
+}
