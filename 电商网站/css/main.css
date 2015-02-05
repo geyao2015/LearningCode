@@ -79,6 +79,7 @@ a {
     height: 35px;
     background-color: #FF8C00;
     margin-top: 30px;
+    display: inline-block;
     /*字体具有继承性，所以在父标签里写字体设置即可*/
     font: 14px/35px "Microsoft YaHei"; /*字体设置的缩写模式，分别设置字体大小/行高/字体*/
     color: #FFF;
@@ -272,6 +273,7 @@ a {
     line-height: 44px;
     clear: both;
     margin-bottom: 15px;
+    padding-top: 15px;
 }
 
 .shopTit h3 {
@@ -305,11 +307,16 @@ a {
 }
 
 /*商品列表-右侧*/
+.shopList-top, .shopList-sm {
+    margin-right: -4px;
+}
+
 .shopList .rightArea {
     width: 808px;
     border: 1px solid #999;
     border-bottom: 3px solid #FF7201;
     height: 396px;
+    overflow: hidden;
 }
 
 .shop-item {
@@ -317,7 +324,8 @@ a {
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
     height: 279px;
-
+    font-family: "Microsoft YaHei";
+    float: left;
 }
 
 .shop-item h3 {
@@ -334,4 +342,74 @@ a {
     width: 100%;
     height: 218px;
     display: inline-block;
+}
+
+.shop-item p {
+    font-size: 14px;
+    color: #FF7300;
+    line-height: 21px;
+    text-align: center;
+}
+
+/*商品列表-小*/
+.shopItem-sm {
+    width: 202px;
+    border-right: 1px solid #999;
+    height: 116px;
+    /*margin-top: 280px;*/
+    float: left;
+}
+
+.shopItem-smImg {
+    width: 95px;
+    height: 95px;
+    text-align: center;
+    float: left;
+}
+
+.shopItem-smImg img {
+    width: 95px;
+    height: 95px;
+}
+
+.shopItem-text {
+    padding-top: 25px;
+    width: 107px;
+    float: left;
+    font-size: 13px;
+}
+
+.shopItem-text h3 {
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    font-weight: normal;
+    color: #181818;
+    line-height: 30px;
+}
+
+.shopItem-text p {
+    color: #FF7300;
+}
+
+/*底部*/
+.footer {
+    margin: 440px auto 0;
+    text-align: center;
+    line-height: 24px;
+    background-color: #D4D4D4;
+    height: 200px;
+    padding: 50px 0;
+}
+
+.footer i {
+    font-style: normal;
+    margin: 0 5px;
+}
+
+.footer a {
+    color: #000;
+}
+
+.footer a:hover {
+    color: #F00;
 }
