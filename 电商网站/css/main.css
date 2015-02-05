@@ -413,3 +413,112 @@ a {
 .footer a:hover {
     color: #F00;
 }
+
+/*产品分类页*/
+.products .leftArea {
+    width: 185px;
+}
+
+.products .rightArea {
+    width: 810px;
+}
+
+.products .banner-bar {
+    float: none;
+}
+
+/*产品分类-导航*/
+.leftNav {
+    background-color: #F3F3F3;
+    border: 1px solid #D7D7D7;
+}
+
+.nav-title {
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    border-bottom: 1px solid #D7D7D7;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav-cont {
+    padding: 0 18px 4px;
+    border-bottom: 1px dotted #D7D7D7;
+    margin-bottom: -1px;
+}
+
+.nav-cont h3 {
+    font-size: 12px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+}
+
+.navCont-list {
+    line-height: 25px;
+}
+
+.navCont-list li {
+    float: left;
+    width: 50%;
+    height: 25px;
+}
+
+/*产品列表-主体部分*/
+
+/*标题*/
+.products-title {
+    height: 34px;
+    border-bottom: 2px solid #CCC;
+    clear: both;
+}
+
+.products-title h3 {
+    width: 180px;
+    border-bottom: 2px solid #096DBA;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 9px;
+}
+
+.products .item {
+    width: 25%;
+    margin-bottom: 10px;
+}
+
+/*商品*/
+.item {
+    float: left;
+}
+
+.img-item {
+    height: 170px;
+    text-align: center;
+}
+
+.img-item img {
+    height: 170px;
+}
+
+.item p {
+    line-height: 20px;
+}
+
+.item a {
+    color: #000;
+}
+
+.item a:hover {
+    text-decoration: underline;
+}
+
+.money {
+    color: #D4105A;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.item-cont {
+    padding: 0 15px;
+}
