@@ -446,6 +446,7 @@ a {
     padding: 0 18px 4px;
     border-bottom: 1px dotted #D7D7D7;
     margin-bottom: -1px;
+    height: 130px;
 }
 
 .nav-cont h3 {
@@ -457,6 +458,7 @@ a {
 
 .navCont-list {
     line-height: 25px;
+    /*clear: both;*/
 }
 
 .navCont-list li {
