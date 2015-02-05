@@ -77,6 +77,7 @@ a {
     height: 35px;
     background-color: #FF8C00;
     margin-top: 30px;
+    /*字体具有继承性，所以在父标签里写字体设置即可*/
     font:14px/35px "Microsoft YaHei";    /*字体设置的缩写模式，分别设置字体大小/行高/字体*/
     color: #FFF;
     margin-right: 59px;
@@ -96,4 +97,121 @@ a {
     background: url(../images/icon/sj.jpg) no-repeat 33px center;
     text-align: right;
     padding-right: 29px;
+}
+/*导航栏*/
+.navBox{
+    height: 35px;
+    background-color: #1369C0;
+    color: #FFF;
+}
+.shopClass{
+    width: 190px;
+    position: relative;
+}
+.shopClass h3{
+    line-height: 35px;
+    text-align: center;
+}
+.shopClass i{
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    overflow: hidden;
+    background: url("../images/icon/down.jpg") no-repeat left center;
+    margin-left: 11px;
+}
+.nav,.shopClass{
+    font-family: "Microsoft YaHei","微软雅黑";
+}
+.nav {
+    line-height: 35px;    
+}
+.nav li{
+    float: left;
+}
+.nav a{
+    height: 35px;
+    display: inline-block;
+    padding: 0 35px;
+    color: #FFF;
+}
+.nav .active{
+    background-color: #4593FD;
+}
+/*商品弹出列表*/
+.shopClass-show{
+    background-color: #4593FD;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+}
+.shopClass-item {
+    padding: 14px 10px;
+    border-bottom: 1px solid #3487F2;
+    border-top: 1px solid #5AA1FE;
+
+}
+.shopClass-item dt {
+    height: 22px;
+    background: url("../images/icon/shop_sj.jpg") no-repeat right center;
+
+}
+.shopClass-item .b{
+    font-size: 14px/1 "Microsoft YaHei";
+}
+
+.shopClass-item a{
+    color: #FFF;
+
+}
+.shopClass-item .aLink{
+    width: 48px;
+    height: 20px;
+    background: url("../images/icon/aLink_bg.png") no-repeat left center;
+    display:inline-block;   
+    text-align: center;
+    line-height: 20px;
+    text-decoration: underline;
+}
+/*banner部分*/
+.banner-bar{
+    width: 810px;
+    height: 326px;
+    float: right;
+    position: relative;
+    overflow: hidden;
+}
+.imgBox{
+    width: 810px;
+    height: 326px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.imgBox li{
+    float: left;
+}
+.imgBox img{
+    width: 1620px;
+    height: 326px;
+    display: block;
+}
+.imgNum{
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+.imgNum a {
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    overflow: hidden;
+    background-color: #FFF;    
+    margin: 0 3px;
+}
+.imgNum .active{
+    background-color: #FF7700;
 }
