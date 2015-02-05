@@ -52,11 +52,14 @@ input {
 .fr {
     float: right
 }
-input,select,textarea{
+
+input, select, textarea {
     outline: none;
     border: none;
     background: none;
 }
-.clearfix{
+
+.clearfix {
+
     clear: both;
 }
