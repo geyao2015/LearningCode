@@ -57,3 +57,6 @@ input,select,textarea{
     border: none;
     background: none;
 }
+.clearfix{
+    clear: both;
+}
