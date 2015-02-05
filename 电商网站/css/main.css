@@ -446,6 +446,10 @@ a {
     padding: 0 18px 4px;
     border-bottom: 1px dotted #D7D7D7;
     margin-bottom: -1px;
+    /*height:auto;*/
+}
+
+.nav-cont-classification {
     height: 130px;
 }
 
@@ -523,4 +527,59 @@ a {
 
 .item-cont {
     padding: 0 15px;
+}
+
+/*商品筛选页*/
+.vertical li {
+    width: auto;
+    float: none;
+    padding-left: 8px;
+}
+
+.vertical .nav-title, .vertical .nav-cont h3 {
+    font: 14px "Microsoft YaHei";
+}
+
+/*筛选条件*/
+
+.screening {
+
+}
+
+.screening dt {
+    line-height: 32px;
+    width: 74px;
+    text-align: center;
+    float: left;
+    margin-right: 42px;
+}
+
+.screening a {
+    padding: 2px;
+}
+
+.limit {
+    width: 55px;
+    float: left;
+    line-height: 32px;
+}
+
+.limit .active {
+    background-color: #1D7AD9;
+    color: #FFF;
+}
+
+.screening {
+    border-bottom: 1px solid #CCC;
+}
+
+.screening-list {
+    line-height: 32px;
+    width: 626px;
+    float: left;
+}
+
+.screening-list li {
+    width: 20%;
+    float: left;
 }
