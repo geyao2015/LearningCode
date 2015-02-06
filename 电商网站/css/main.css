@@ -583,3 +583,108 @@ a {
     width: 20%;
     float: left;
 }
+
+/*送货地址*/
+.addInfo {
+    height: 31px;
+}
+
+.addInfo .select {
+    margin-top: 4px;
+
+}
+
+.address {
+    float: left;
+}
+
+.add-text {
+    display: inline-block;
+    float: left;
+    /*width: 30px;*/
+    /*font-size: 14px;*/
+    line-height: 31px;
+    padding-left: 12px;
+    padding-right: 6px;
+}
+
+.select {
+    border: 1px solid #999;
+    height: 22px;
+    line-height: 22px;
+    /*background-color:#FFF;*/
+    padding-left: 30px;
+    padding-right: 10px;
+    position: relative;
+    z-index: 4; /*给个层级，防止下面弹出的列表与商品元素重叠*/
+}
+
+.select h3 {
+    font-size: 11px;
+    font-weight: normal;
+    border: 1px solid #CCC;
+}
+
+.select span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 20px;
+    background: url("./images/icon/sj_blue.jpg") no-repeat center center;
+}
+
+.show-select {
+    position: absolute;
+    left: -1px;
+    top: 22px;
+    background-color: #FFF;
+    width: 100%;
+    border: 1px solid #999;
+    display: none;
+}
+
+.show-select li {
+    padding-left: 10px;
+}
+
+.screen-text {
+    line-height: 31px;
+    padding-right: 80px;
+}
+
+.screen-text span {
+    vertical-align: middle;
+}
+
+.check {
+    position: relative;
+    top: -1px;
+}
+
+.check input, .check label {
+    vertical-align: middle;
+}
+
+.shop-number em {
+    color: #f00;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/*商品图样--筛选页*/
+.screening-list-more {
+    padding-right: 0.5%;
+}
+
+.screening-list-more .item {
+    width: 33.3%;
+}
+
+.addCar {
+    border: 1px solid #999;
+    height: 18px;
+    display: inline-block;
+    padding: 0 6px 0 23px;
+    background: url("./images/icon/car.jpg") no-repeat 6px center;
+}
