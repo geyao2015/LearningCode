@@ -543,7 +543,7 @@ a {
 /*筛选条件*/
 
 .screening {
-
+    overflow: hidden;
 }
 
 .screening dt {
@@ -587,6 +587,8 @@ a {
 /*送货地址*/
 .addInfo {
     height: 31px;
+    border:1px solid #CCC;
+    background-color: #F5F5F5;
 }
 
 .addInfo .select {
@@ -604,17 +606,17 @@ a {
     /*width: 30px;*/
     /*font-size: 14px;*/
     line-height: 31px;
-    padding-left: 12px;
-    padding-right: 6px;
+    padding: 0 6px 0 9px;
 }
 
 .select {
     border: 1px solid #999;
     height: 22px;
+    width: 100px;
     line-height: 22px;
     /*background-color:#FFF;*/
-    padding-left: 30px;
-    padding-right: 10px;
+    padding-left: 40px;
+    padding-right: 0px;
     position: relative;
     z-index: 4; /*给个层级，防止下面弹出的列表与商品元素重叠*/
 }
@@ -631,7 +633,8 @@ a {
     right: 0;
     height: 100%;
     width: 20px;
-    background: url("./images/icon/sj_blue.jpg") no-repeat center center;
+    background: url("../images/icon/sj_blue.jpg") no-repeat center center;
+    /*background-color: red;*/
 }
 
 .show-select {
@@ -650,7 +653,7 @@ a {
 
 .screen-text {
     line-height: 31px;
-    padding-right: 80px;
+    padding-right: 10px;
 }
 
 .screen-text span {
@@ -686,5 +689,5 @@ a {
     height: 18px;
     display: inline-block;
     padding: 0 6px 0 23px;
-    background: url("./images/icon/car.jpg") no-repeat 6px center;
+    background: url("../images/icon/car.jpg") no-repeat 6px center;
 }
