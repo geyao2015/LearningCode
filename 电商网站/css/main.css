@@ -393,7 +393,7 @@ a {
 
 /*底部*/
 .footer {
-    margin: 440px auto 0;
+    margin: 30px auto 0;
     text-align: center;
     line-height: 24px;
     background-color: #D4D4D4;
@@ -587,7 +587,7 @@ a {
 /*送货地址*/
 .addInfo {
     height: 31px;
-    border:1px solid #CCC;
+    border: 1px solid #CCC;
     background-color: #F5F5F5;
 }
 
@@ -692,93 +692,113 @@ a {
     background: url("../images/icon/car.jpg") no-repeat 6px center;
 }
 
-
 /*商品介绍页*/
-.grey{
+.grey {
     background-color: #F0F0F0;
 }
 
 /*用户所在位置*/
-.user-position{
+.user-position {
     font-size: 12px;
     font-family: "Verdana";
-    margin:25px auto 15px;
+    margin: 25px auto 15px;
+    overflow: hidden;
 }
-.user-position a{
+
+.user-position a {
     text-decoration: underline;
 }
-.description{
+
+.description {
     border-color: 1px solid #CCC;
 }
-.description-info{
+
+.description-info {
     background-color: #FFF;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
-.description-info .leftArea{
+
+.description-info .leftArea {
     width: 309px;
 }
-.description-info .rightArea{
+
+.description-info .rightArea {
     width: 688px;
     border-left: 1px solid #CCC;
 }
 
 /*图片展示*/
-.description-imgs .big{
+.description-imgs .big {
     width: 340px;
     text-align: center;
 }
-.des-smimg{
+
+.des-smimg {
     padding-left: 1px;
     width: 265px;
     margin: 0 auto;
 }
-.des-smimg li{
+
+.des-smimg li {
     float: left;
     margin-left: -1px;
 }
-.des-smimg img{
-    border:1px solid #CCC;
+
+.des-smimg img {
+    border: 1px solid #CCC;
 }
-.des-smimg .active{
+
+.des-smimg .active {
     border-color: #317EE7;
     position: relative;
     z-index: 4px;
 }
 
-.des-content{
+.des-content {
     padding: 10px;
 }
-.des-content-title{
-    font: bold 16px/22px "Microsoft YaHei","微软雅黑";
+
+.des-content-title {
+    font: bold 16px/22px "Microsoft YaHei", "微软雅黑";
     padding: 13px 25px;
 }
 
-.des-content dt{
-    width: 75px;
+.des-content .dt {
+    width: 90px;
     float: left;
     color: #666;
     text-indent: 17px;
     line-height: 25px;
-    /*list-style: none;*/
-}
-.des-content dl{
-    margin-bottom: 8px;
+    /*border:5px solid red;*/
 }
 
-.des-money{
+.des-content .dd {
+    /*float: left;*/
+    display: inline-block;
+}
+
+.des-content .dl {
+    margin-bottom: 8px;
+    /*vertical-align: middle;*/
+}
+
+.des-money {
     font-size: 18px;
     color: #F30;
 }
-.des-money em{
+
+.des-money em {
     font-style: normal;
     font-size: 12px;
 }
 
-.huangou-icon{
-    padding-top: 5px;
+.huangou {
+    /*padding-top: 5px;*/
     display: inline-block;
 }
 
-.huangou-icon{
+.huangou-icon {
     height: 18px;
     width: 55px;
     display: inline-block;
@@ -788,14 +808,246 @@ a {
     text-indent: 16px;
     line-height: 18px;
     margin-right: 10px;
+    vertical-align: middle;
 }
+
 /*送货*/
-.des-position{
+.des-position {
     background-color: #F2F2F2;
     padding: 15px 0;
 }
 
-.theGoods{
+.des-position .select {
+    display: inline-block;
+    padding: 0;
+    border: none;
+}
+
+.theGoods {
     line-height: 24px;
     padding-left: 10px;
+    display: inline-block;
+}
+
+.colorSelect {
+    /*vertical-align: middle;*/
+    margin-top: 7px;
+}
+
+.des-item {
+    color: #666;
+    padding: 9px 10px;
+    border: 1px solid #CCC;
+    float: left;
+    background-color: #fff;
+    margin-right: 10px;
+}
+
+.des-item-active {
+    border-color: #317EE7;
+    color: #333;
+}
+
+.des-item .colorSelect {
+    line-height: 35px;
+}
+
+/*数量*/
+.des-number {
+    border: 1px solid #B2B2B2;
+    height: 32px;
+    width: 82px;
+    float: left;
+}
+
+.des-number div {
+    height: 100%;
+    float: left;
+}
+
+.reduction, .plus {
+    width: 15px;
+    background: url("../images/icon/plus_bg.jpg") no-repeat left top;
+    line-height: 32px;
+    text-align: center;
+    color: #333;
+}
+
+.reduction {
+    border-right: 1px solid #CCC;
+}
+
+.plus {
+    border-left: 1px solid #CCC;
+}
+
+.des-input {
+    width: 42px;
+    background: url("../images/icon/des-input_bg.jpg") no-repeat left top;
+    padding: 0 4px;
+}
+
+.des-input input {
+    width: 100%;
+    height: 100%;
+    line-height: 32px \9;
+    text-align: center;
+}
+
+.xiangou {
+    line-height: 32px;
+    float: left;
+    /*padding-left: 10px;*/
+    font-weight: bold;
+}
+
+.xiangou em {
+    font-style: normal;
+    color: #FB7700;
+}
+
+/*已选择*/
+.des-select {
+    font-weight: bold;
+    margin: 22px 0 12px;
+    text-indent: 17px;
+}
+
+.des-select span {
+    color: #0479C9;
+}
+
+.shop-buy {
+    text-align: center;
+}
+
+.shopping-btn, .buy-btn {
+    display: inline-block;
+    width: 184px;
+    height: 48px;
+    background: url("../images/icon/buy_btn.jpg") no-repeat left top;
+}
+
+.line {
+    height: 90px;
+    width: 1px;
+    background-color: #CCC;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 40px;
+}
+
+.shopping-btn, .buy-btn, .line {
+    vertical-align: middle;
+}
+
+.shop-fapiao {
+    color: #CCC;
+    text-align: center;
+}
+
+/*产品介绍*/
+.des-info {
+    overflow: hidden;
+}
+
+.des-info .leftArea {
+    width: 190px;
+}
+
+.des-info .rightArea {
+    width: 810px;
+}
+
+.recommend {
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    height: auto;
+    padding-bottom: 15px;
+}
+
+.recommend .tit {
+    height: 39px;
+    border-bottom: 1px solid #CCC;
+    line-height: 39px;
+    text-indent: 15px;
+    font-size: 14px;
+    background-color: #F3F3F3;
+}
+
+.recommend .item {
+    float: none;
+}
+
+.recommend .money {
+    padding-top: 0;
+}
+
+/*详细介绍*/
+.des-info-content {
+    border: 1px solid #CCC;
+    background-color: #FFF;
+}
+
+.des-tit {
+    height: 39px;
+    border-bottom: 1px solid #CCC;
+    background: url("../images/icon/des_title.jpg") repeat-x left top;
+}
+
+.des-tit li {
+    float: left;
+    width: 43%;
+    font: 14px/39px "宋体";
+    text-align: center;
+}
+
+.des-tit .active {
+    background-color: #0479CA;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.ad {
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.info-tit {
+    height: 26px;
+    border-bottom: 1px solid #CCC;
+    font-family: "Microsoft YaHei";
+    margin-bottom: 18px;
+}
+
+.info-tit h3 {
+    float: left;
+    font-size: 16px;
+    color: #2357A5;
+    border-bottom: 1px solid #2357A5;
+    height: 26px;
+    margin-bottom: -1px;
+    position: relative;
+    padding-right: 8px;
+}
+
+.info-tit h4 {
+    font-size: 12px;
+    line-height: 26px;
+    padding-left: 4px;
+}
+
+.info-text {
+    padding: 2px 20px;
+}
+
+.info-text p {
+    line-height: 22px;
+    font-size: 14px;
+    color: #656565;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
 }
