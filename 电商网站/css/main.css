@@ -743,3 +743,59 @@ a {
     position: relative;
     z-index: 4px;
 }
+
+.des-content{
+    padding: 10px;
+}
+.des-content-title{
+    font: bold 16px/22px "Microsoft YaHei","微软雅黑";
+    padding: 13px 25px;
+}
+
+.des-content dt{
+    width: 75px;
+    float: left;
+    color: #666;
+    text-indent: 17px;
+    line-height: 25px;
+    /*list-style: none;*/
+}
+.des-content dl{
+    margin-bottom: 8px;
+}
+
+.des-money{
+    font-size: 18px;
+    color: #F30;
+}
+.des-money em{
+    font-style: normal;
+    font-size: 12px;
+}
+
+.huangou-icon{
+    padding-top: 5px;
+    display: inline-block;
+}
+
+.huangou-icon{
+    height: 18px;
+    width: 55px;
+    display: inline-block;
+    background: url("../images/icon/hg_icon.jpg") no-repeat left top;
+    color: #FFF;
+    font-style: normal;
+    text-indent: 16px;
+    line-height: 18px;
+    margin-right: 10px;
+}
+/*送货*/
+.des-position{
+    background-color: #F2F2F2;
+    padding: 15px 0;
+}
+
+.theGoods{
+    line-height: 24px;
+    padding-left: 10px;
+}
