@@ -953,10 +953,12 @@ a {
 
 .des-info .leftArea {
     width: 190px;
+    float: left;
 }
 
 .des-info .rightArea {
-    width: 810px;
+    float: right;
+    width: 790px;
 }
 
 .recommend {
@@ -964,6 +966,7 @@ a {
     background-color: #FFF;
     height: auto;
     padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .recommend .tit {

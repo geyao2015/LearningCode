@@ -56,8 +56,8 @@ input, select, textarea {
 }
 
 .clearfix {
-
     clear: both;
+    overflow: hidden;
 }
 .hide{
     display: none;
