@@ -1,0 +1,31 @@
+body{
+    background: url("../images/bg.jpg");
+}
+
+#mask{
+    background: #000;
+    opacity: 0.75;
+    filter: alpha(opacity=75); /*适配IE的透明度*/
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+#login{
+    position: fixed;
+    left: 30%;
+    top: 30%;
+
+}
+.loginCon{
+    width: 670px;
+    height: 380px;
+    background: red;
+    position: relative;
+}
+#close{
+    width: 30px;
+    height: 30px;
+}
