@@ -1,0 +1,56 @@
+.clearfix:after{
+    content: '';
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.header {
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+    font-family: "Microsoft YaHei", "微软雅黑";
+
+}
+
+.header a {
+    text-decoration: none;
+    background: #D3520C;
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+    line-height: 30px;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+.grid-container {
+    margin: 0 auto;
+    width: 490px;
+    background: #bbada0;
+    border-radius: 10px;
+    position: relative;
+}
+
+.grid-cell {
+    border: 1px solid #888;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    background: #ccc0b3;
+    border-radius: 10px;
+}
+
+.number-cell{
+    border-radius: 6px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 100px;
+    text-align: center;
+
+    position: absolute;
+}
