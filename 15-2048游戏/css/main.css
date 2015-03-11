@@ -83,7 +83,6 @@ body {
 
 .grid-cell {
     border: 1px solid #888;
-    /*margin: 10px;*/
     width: 100px;
     height: 100px;
     background: #ccc0b3;
@@ -100,4 +99,23 @@ body {
     text-align: center;
 
     position: absolute;
+}
+
+.overMask{
+    border: 1px solid red;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    opacity: 0.75;
+    margin-top: -500px;
+    margin-left: 430px;
+    line-height: 500px;
+    background: #000;
+    text-indent: 50px;
+}
+.overMask a{
+    text-decoration: none;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 50px;
+    color: #776E65;
 }

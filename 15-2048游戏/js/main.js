@@ -18,6 +18,8 @@ function init() {
     //初始化函数
     score = 0;
     updateScore();
+    $(".overMask").css("display","none");
+
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
             $("#grid-cell-" + i + "-" + j).css("top", getPosTop(i, j));
@@ -149,7 +151,8 @@ function isGameOver() {
 }
 function gameOver() {
     generateOneNumber();
-    setTimeout(alert("游戏结束"), 200);
+    $(".overMask").css("display","block");
+    //setTimeout(alert("Game Over"), 500);
 }
 function moveLeft() {
     if (!canMoveLeft(board)) {
