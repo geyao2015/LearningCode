@@ -10,7 +10,6 @@ $(function () {
     newGame();
 });
 
-
 function newGame() {
     //初始化棋盘格
     init();
@@ -18,6 +17,7 @@ function newGame() {
 function init() {
     //初始化函数
     score = 0;
+    updateScore();
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
             $("#grid-cell-" + i + "-" + j).css("top", getPosTop(i, j));
@@ -72,7 +72,6 @@ function updateBoardView() {
 
             }
             hasConflicted[i][j] = false;
-
         }
     }
 }
@@ -80,7 +79,6 @@ function updateBoardView() {
 function generateOneNumber() {
     //随机的在一个位置生成2或者4
     if (!nospace(board)) {
-
         //随机一个位置
         var randx = parseInt(Math.floor(Math.random() * 4));//向下取整
         var randy = parseInt(Math.floor(Math.random() * 4));
@@ -97,9 +95,9 @@ function generateOneNumber() {
             //查找一个空位置
             for (var i = 0; i < 4; i++) {
                 for (var j = 0; j < 4; j++) {
-                    if(board[i][j]==0){
-                        randx=i;
-                        randy=j;
+                    if (board[i][j] == 0) {
+                        randx = i;
+                        randy = j;
                     }
                 }
             }
@@ -113,7 +111,6 @@ function generateOneNumber() {
         showNumberWithAnimation(randx, randy, randNumber);
     }
     return true;
-
 }
 
 $(document).keydown(function (event) {
@@ -186,7 +183,6 @@ function moveLeft() {
         }
     }
     setTimeout(updateBoardView(), 220);
-
     return true;
 }
 
@@ -222,7 +218,6 @@ function moveUp() {
         }
     }
     setTimeout(updateBoardView(), 220);
-
     return true;
 }
 function moveRight() {
@@ -257,7 +252,6 @@ function moveRight() {
         }
     }
     setTimeout(updateBoardView(), 220);
-
     return true;
 }
 function moveDown() {
@@ -292,7 +286,6 @@ function moveDown() {
         }
     }
     setTimeout(updateBoardView(), 220);
-
     return true;
 }
 function updateScore() {

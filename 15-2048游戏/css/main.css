@@ -1,25 +1,74 @@
+/*一些CSS样式重置*/
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+img, ins, kbd, q, s, samp,
+small, strike, strong,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baselinebaseline;
+    background: transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+/*清除浮动-通用版*/
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
 .header {
     margin: 0 auto;
     width: 500px;
-    text-align: center;
     font-family: "Microsoft YaHei", "微软雅黑";
+    position: relative;
+    height: 100px;
+    clear: both;
+    overflow: hidden;
+    height: 100px;
+}
 
-}
-.header h2{
-    font-size: 60px;
+.header h2 {
+    font-size: 40px;
     display: inline-block;
+    color: #776E65;
+    margin: 10px 20px;
 }
+
 .header a {
     text-decoration: none;
     background: #8F7A66;
     display: inline-block;
-    height: 30px;
+    height: 40px;
     width: 150px;
-    line-height: 30px;
-    font-size: 17px;
+    line-height: 40px;
+    font-size: 20px;
     border-radius: 10px;
     color: #ffffff;
+    text-align: center;
+    margin-left: 175px;
 
+}
+
+.header p {
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 20px;
+    color: #8F7A66;
+    margin-left: 375px;
+    margin-top: 10px;
 }
 
 .grid-container {
@@ -42,7 +91,7 @@
     position: absolute;
 }
 
-.number-cell{
+.number-cell {
     border-radius: 10px;
     font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: bold;
