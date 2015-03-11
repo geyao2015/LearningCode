@@ -26,5 +26,5 @@ function showMoveAnimation(fromx, fromy, tox, toy) {
     numberCell.animate({
         top: getPosTop(tox, toy),
         left: getPosTop(tox, toy)
-    }, 00)
+    }, 200)
 }
