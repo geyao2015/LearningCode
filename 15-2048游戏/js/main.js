@@ -64,7 +64,7 @@ function updateBoardView() {
                 theNumberCell.css("left", getPosLeft(i, j));
                 theNumberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
                 theNumberCell.css("color", getNumberColor(board[i][j]));
-                theNumberCell.css("text", board[i][j]);
+                theNumberCell.html(board[i][j]);
 
             }
 
@@ -75,7 +75,6 @@ function updateBoardView() {
 function generateOneNumber() {
     //随机的在一个位置生成2或者4
     if (!nospace(board)) {
-        //return false;
 
         //随机一个位置
         var randx = parseInt(Math.floor(Math.random() * 4));//向下取整
@@ -129,13 +128,44 @@ $(document).keydown(function (event) {
         default :
     }
 });
-
-function moveLeft(){
-    if(!canMoveLeft(board)){
+function isGameOver() {
+    if (nospace(board) && noMove(board)) {
+        gameOver();
+    }
+}
+function gameOver() {
+    alert("游戏结束");
+}
+function moveLeft() {
+    if (!canMoveLeft(board)) {
+        generateOneNumber();
         return false;
     }
-    else{
-
+    for (var i = 0; i < 4; i++) {
+        for (var j = 1; j < 4; j++) {
+            if (board[i][j] != 0) {
+                for (var k = 0; k < j; k++) {
+                    if (board[i][k] == 0 && noBlockHorizontal(i, k, j, board)) {
+                        //move
+                        showMoveAnimation(i, j, i, k);
+                        board[i][k] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }
+                    if (board[i][k] == board[i][j] && noBlockHorizontal(i, k, j, board)) {
+                        //move
+                        showMoveAnimation(i, j, i, k);
+                        //add
+                        board[i][k] += board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }
+                }
+            }
+        }
     }
+    setTimeout(updateBoardView(), 200)
+
+    return true;
 }
 

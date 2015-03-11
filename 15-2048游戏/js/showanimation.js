@@ -3,16 +3,28 @@
  */
 
 function showNumberWithAnimation(i, j, randNumber) {
-    //todo:显示不出来数字
+
     var numberCell = $("#number-cell-" + i + "-" + j);
-    numberCell.css('background-color', getNumberBackgroundColor(randNumber));
-    numberCell.css('color', getNumberColor(randNumber));
-    numberCell.text(randNumber.toString());
-//alert(numberCell.text());
+    //numberCell.css("width", "100px");
+    //numberCell.css("height", "100px");
+    //numberCell.css("top", getPosTop(i, j));
+    //numberCell.css("left", getPosLeft(i, j));
+    numberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
+    numberCell.css("color", getNumberColor(board[i][j]));
+    numberCell.html(board[i][j]);
+
     numberCell.animate({
         width: "100px",
         height: "100px",
         top: getPosTop(i, j),
         left: getPosTop(j, j)
-    }, 500)
+    }, 50)
+}
+
+function showMoveAnimation(fromx, fromy, tox, toy) {
+    var numberCell = $("#number-cell-" + fromx + "-" + fromy);
+    numberCell.animate({
+        top: getPosTop(tox, toy),
+        left: getPosTop(tox, toy)
+    }, 00)
 }
