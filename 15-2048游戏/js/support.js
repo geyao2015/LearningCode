@@ -36,13 +36,13 @@ function getNumberBackgroundColor(number) {
             return "#6BADF6";
             break;
         case 512:
-            return "#F08100";
+            return "#EBC400";
             break;
         case 1024:
-            return "#0019C4";
+            return "#EBC400";
             break;
         case 2048:
-            return "#FF0000";
+            return "#EBC400";
             break;
 
 
