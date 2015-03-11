@@ -18,7 +18,8 @@ function init() {
     //初始化函数
     score = 0;
     updateScore();
-    $(".overMask").css("display","none");
+    //$(".overMask").css("display", "none");
+    $(".overMask").hide();
 
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
@@ -60,7 +61,6 @@ function updateBoardView() {
 
             }
             else {
-
                 theNumberCell.css("width", "100px");
                 theNumberCell.css("height", "100px");
                 theNumberCell.css("top", getPosTop(i, j));
@@ -119,25 +119,25 @@ $(document).keydown(function (event) {
     switch (event.keyCode) {
         case 37://left
             if (moveLeft()) {
-                setTimeout(generateOneNumber(), 220);
+                setTimeout(generateOneNumber(), 210);
                 setTimeout(isGameOver(), 220);
             }
             break;
         case 38://up
             if (moveUp()) {
-                setTimeout(generateOneNumber(), 220);
+                setTimeout(generateOneNumber(), 210);
                 setTimeout(isGameOver(), 220);
             }
             break;
         case 39://right
             if (moveRight()) {
-                setTimeout(generateOneNumber(), 220);
+                setTimeout(generateOneNumber(), 210);
                 setTimeout(isGameOver(), 220);
             }
             break;
         case 40://down
             if (moveDown()) {
-                setTimeout(generateOneNumber(), 220);
+                setTimeout(generateOneNumber(), 210);
                 setTimeout(isGameOver(), 220);
             }
             break;
@@ -146,13 +146,24 @@ $(document).keydown(function (event) {
 });
 function isGameOver() {
     if (nospace(board) && noMove(board)) {
-        gameOver();
+        gameOver("Just Try Again!")
     }
 }
-function gameOver() {
+function gameOver(text) {
     generateOneNumber();
-    $(".overMask").css("display","block");
-    //setTimeout(alert("Game Over"), 500);
+    $(".overMask a").html(text);
+    //$(".overMask").css("display", "block");
+    $(".overMask").show();
+}
+function isWinGame(board) {
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 4; j++) {
+            if (board[i][j] == 2048) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 function moveLeft() {
     if (!canMoveLeft(board)) {
@@ -179,6 +190,10 @@ function moveLeft() {
                         //add score
                         score += board[i][k];
                         updateScore();
+                        if (isWinGame(board)) {
+                            gameOver("You Get 2048!");
+                        }
+
                         continue;
                     }
                 }
@@ -214,6 +229,9 @@ function moveUp() {
                         //add score
                         score += board[k][j];
                         updateScore();
+                        if (isWinGame(board)) {
+                            gameOver("You Get 2048!");
+                        }
                         continue;
                     }
                 }
@@ -248,6 +266,9 @@ function moveRight() {
                         //add score
                         score += board[i][k];
                         updateScore();
+                        if (isWinGame(board)) {
+                            gameOver("You Get 2048!");
+                        }
                         continue;
                     }
                 }
@@ -282,6 +303,9 @@ function moveDown() {
                         //add score
                         score += board[k][j];
                         updateScore();
+                        if (isWinGame(board)) {
+                            gameOver("You Get 2048!");
+                        }
                         continue;
                     }
                 }

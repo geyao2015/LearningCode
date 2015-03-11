@@ -101,21 +101,24 @@ body {
     position: absolute;
 }
 
-.overMask{
-    border: 1px solid red;
+.overMask {
+    /*border: 1px solid red;*/
     position: absolute;
     height: 500px;
     width: 500px;
     opacity: 0.75;
     margin-top: -500px;
-    margin-left: 430px;
+    margin-left: 432px;
     line-height: 500px;
     background: #000;
     text-indent: 50px;
+    border-radius: 10px;
+    z-index: 1;
 }
-.overMask a{
+
+.overMask a {
     text-decoration: none;
     font-family: "Microsoft YaHei", "微软雅黑";
     font-size: 50px;
-    color: #776E65;
+    color: #FFF;
 }

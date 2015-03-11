@@ -5,10 +5,6 @@
 function showNumberWithAnimation(i, j, randNumber) {
 
     var numberCell = $("#number-cell-" + i + "-" + j);
-    //numberCell.css("width", "100px");
-    //numberCell.css("height", "100px");
-    //numberCell.css("top", getPosTop(i, j));
-    //numberCell.css("left", getPosLeft(i, j));
     numberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
     numberCell.css("color", getNumberColor(board[i][j]));
     numberCell.html(board[i][j]);
