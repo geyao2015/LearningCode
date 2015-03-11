@@ -10,19 +10,43 @@ function getPosLeft(i, j) {
 
 function getNumberBackgroundColor(number) {
     //根据数字返回背景色
-    switch (number){
+    switch (number) {
         case 2:
-            return "eee4da";break;
+            return "#FC6";
+            break;
 
 
     }
-    return "#93c";
+    return "#FC6";
 }
 
 function getNumberColor(number) {
     //根据数字返回前景色
-    if(number<4){
+    if (number < 4) {
         return "#776e65";
     }
-    return "white";
+    return "red";
+}
+function nospace(board) {
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 4; j++) {
+            if (board[i][j] == 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+function canMoveLeft(borad) {
+    for (var i = 0; i < 4; i++) {
+        for (var j = 1; j < 4; j++) {
+            if (board[i][j] != 0) {
+                if(board[i-1][j]==0||board[i-1][j]==board[i][j]){
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }
