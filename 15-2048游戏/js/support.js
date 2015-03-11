@@ -12,10 +12,37 @@ function getNumberBackgroundColor(number) {
     //根据数字返回背景色
     switch (number) {
         case 2:
-            return "#FC6";
+            return "#EEE4DA";
             break;
         case 4:
-            return "#FC9";
+            return "#EDE0C8";
+            break;
+        case 8:
+            return "#F2B179";
+            break;
+        case 16 :
+            return "#F59563";
+            break;
+        case 32:
+            return "#F67C5F";
+            break;
+        case 64:
+            return "#F65E3B";
+            break;
+        case 128:
+            return "#EDCF72";
+            break;
+        case 256:
+            return "#6BADF6";
+            break;
+        case 512:
+            return "#F08100";
+            break;
+        case 1024:
+            return "#0019C4";
+            break;
+        case 2048:
+            return "#FF0000";
             break;
 
 
@@ -26,9 +53,9 @@ function getNumberBackgroundColor(number) {
 function getNumberColor(number) {
     //根据数字返回前景色
     if (number <= 4) {
-        return "#776e65";
+        return "#776E65";
     }
-    return "white";
+    return "#F9F6F2";
 }
 function nospace(board) {
     //判断棋盘格里是否还有空间
