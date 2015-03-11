@@ -5,16 +5,21 @@
     font-family: "Microsoft YaHei", "微软雅黑";
 
 }
-
+.header h2{
+    font-size: 60px;
+    display: inline-block;
+}
 .header a {
     text-decoration: none;
-    background: #D3520C;
+    background: #8F7A66;
     display: inline-block;
     height: 30px;
-    width: 200px;
+    width: 150px;
     line-height: 30px;
     font-size: 17px;
     border-radius: 10px;
+    color: #ffffff;
+
 }
 
 .grid-container {
