@@ -75,7 +75,7 @@ function init() {
 }
 
 function updateBoardView() {
-    //更新页面视图
+    //更新页面视图-即根据board生成所有 number-cell
     $(".number-cell").remove();
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
@@ -146,6 +146,31 @@ function generateOneNumber() {
     }
     return true;
 }
+
+function isGameOver() {
+    if (nospace(board) && noMove(board)) {
+        gameOver("Just Try Again!")
+    }
+}
+
+function gameOver(text) {
+    generateOneNumber();
+    $(".overMask a").html(text);
+    //$(".overMask").css("display", "block");
+    $(".overMask").show();
+}
+
+function isWinGame(board) {
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 4; j++) {
+            if (board[i][j] == 2048) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 //移动度端触控操作
 document.addEventListener("touchstart", function (event) {
     startx = event.touches[0].clientX;
@@ -199,7 +224,7 @@ $(document).keydown(function (event) {
         case 37://left
             event.preventDefault();//阻止默认的方向键，避免滚动条出现
             if (moveLeft()) {
-                setTimeout(generateOneNumber(), 210);
+                setTimeout(generateOneNumber(), 220);
                 setTimeout(isGameOver(), 220);
             }
             break;
@@ -227,30 +252,6 @@ $(document).keydown(function (event) {
         default :
     }
 });
-
-function isGameOver() {
-    if (nospace(board) && noMove(board)) {
-        gameOver("Just Try Again!")
-    }
-}
-
-function gameOver(text) {
-    generateOneNumber();
-    $(".overMask a").html(text);
-    //$(".overMask").css("display", "block");
-    $(".overMask").show();
-}
-
-function isWinGame(board) {
-    for (var i = 0; i < 4; i++) {
-        for (var j = 0; j < 4; j++) {
-            if (board[i][j] == 2048) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
 
 function moveLeft() {
     if (!canMoveLeft(board)) {
@@ -280,14 +281,13 @@ function moveLeft() {
                         if (isWinGame(board)) {
                             gameOver("You Get 2048!");
                         }
-
                         continue;
                     }
                 }
             }
         }
     }
-    setTimeout(updateBoardView(), 220);
+    setTimeout(updateBoardView(), 210);
     return true;
 }
 
@@ -302,14 +302,14 @@ function moveUp() {
                 for (var k = 0; k < i; k++) {
                     if (board[k][j] == 0 && noBlockVertical(k, i, j, board)) {
                         //move
-                        showMoveAnimation(i, j, i, k);
+                        showMoveAnimation(i, j, k, j);
                         board[k][j] = board[i][j];
                         board[i][j] = 0;
                         continue;
                     }
                     if (board[k][j] == board[i][j] && noBlockVertical(k, i, j, board) && !hasConflicted[k][j]) {
                         //move
-                        showMoveAnimation(i, j, i, k);
+                        showMoveAnimation(i, j, k, j);
                         //add
                         board[k][j] += board[i][j];
                         board[i][j] = 0;
@@ -362,7 +362,7 @@ function moveRight() {
             }
         }
     }
-    setTimeout(updateBoardView(), 220);
+    setTimeout(updateBoardView(), 500);
     return true;
 }
 function moveDown() {
@@ -376,14 +376,14 @@ function moveDown() {
                 for (var k = 3; k > i; k--) {
                     if (board[k][j] == 0 && noBlockVertical(i, k, j, board)) {
                         //move
-                        showMoveAnimation(i, j, i, k);
+                        showMoveAnimation(i, j, k, j);
                         board[k][j] = board[i][j];
                         board[i][j] = 0;
                         continue;
                     }
                     if (board[k][j] == board[i][j] && noBlockVertical(i, k, j, board) && !hasConflicted[k][j]) {
                         //move
-                        showMoveAnimation(i, j, i, k);
+                        showMoveAnimation(i, j, k, j);
                         //add
                         board[k][j] += board[i][j];
                         board[i][j] = 0;
