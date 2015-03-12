@@ -6,6 +6,8 @@ var board = new Array(),
     score = 0,
     hasConflicted = new Array();//用于防止二次碰撞
 
+var startx, starty, endx, endy;//用于移动端触控操作
+
 screenWidth = $(window).width();
 gridContainerWidth = screenWidth * 0.92;
 cellWidth = screenWidth * 0.18;
@@ -15,10 +17,6 @@ $(function () {
 });
 
 function newGame() {
-    //alert(screenWidth);
-    //alert(gridContainerWidth);
-    //alert(screenWidth* 0.18);
-    //alert(cellDistance);
     adjustForMobile();
     //初始化
     init();
@@ -31,9 +29,9 @@ function adjustForMobile() {
         cellWidth = 100;
         cellDistance = 20;
     }
-    //$(".header").css("left", (screenWidth-gridContainerWidth)/2+(cellWidth*4) + "px");
+    //调整header部分样式
     $(".header").css("width", gridContainerWidth + "px");
-    $(".header").css("left", cellWidth*3 + "px");
+    $(".header").css("left", cellWidth * 3 + "px");
     $(".header h2").css("margin-left", -(gridContainerWidth / 2 - cellDistance) + "px");
 
     var theGridContainer = $("#grid-container");
@@ -78,7 +76,6 @@ function init() {
 
 function updateBoardView() {
     //更新页面视图
-
     $(".number-cell").remove();
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
@@ -97,9 +94,7 @@ function updateBoardView() {
                 theNumberCell.css("width", cellWidth + "px");
                 theNumberCell.css("height", cellWidth + "px");
                 theNumberCell.css("line-height", cellWidth + "px");
-                theNumberCell.css("font-size", cellWidth * 0.62 + "px");
                 theNumberCell.css("border-radius", gridContainerWidth * 0.02 + "px");
-
                 theNumberCell.css("top", getPosTop(i, j));
                 theNumberCell.css("left", getPosLeft(i, j));
                 theNumberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
@@ -151,9 +146,55 @@ function generateOneNumber() {
     }
     return true;
 }
+//移动度端触控操作
+document.addEventListener("touchstart", function (event) {
+    startx = event.touches[0].clientX;
+    starty = event.touches[0].clientY;
+});
+document.addEventListener("touchend", function (event) {
+    endx = event.changedTouches[0].pageX;
+    endy = event.changedTouches[0].pageY;
 
+    if (Math.abs(endx - startx) > 0.1 * screenWidth || Math.abs(endy - starty) > 0.1 * screenWidth) {
+        if (Math.abs(endx - startx) > Math.abs(endy - starty)) {
+            //横向
+            if (endx - startx > 0) {
+                //moveRight
+                if (moveRight()) {
+                    setTimeout(generateOneNumber(), 210);
+                    setTimeout(isGameOver(), 220);
+                }
+            }
+            else {
+                //moveLeft
+                if (moveLeft()) {
+                    setTimeout(generateOneNumber(), 210);
+                    setTimeout(isGameOver(), 220);
+                }
+            }
+        }
+        else {
+            //纵向
+            if (endy - starty > 0) {
+                //moveDown
+                if (moveDown()) {
+                    setTimeout(generateOneNumber(), 210);
+                    setTimeout(isGameOver(), 220);
+                }
+            }
+            else {
+                //moveUp
+                if (moveUp()) {
+                    setTimeout(generateOneNumber(), 210);
+                    setTimeout(isGameOver(), 220);
+                }
+            }
+        }
+    }
+});
+
+//键盘操作
 $(document).keydown(function (event) {
-
     switch (event.keyCode) {
         case 37://left
             event.preventDefault();//阻止默认的方向键，避免滚动条出现
@@ -186,17 +227,20 @@ $(document).keydown(function (event) {
         default :
     }
 });
+
 function isGameOver() {
     if (nospace(board) && noMove(board)) {
         gameOver("Just Try Again!")
     }
 }
+
 function gameOver(text) {
     generateOneNumber();
     $(".overMask a").html(text);
     //$(".overMask").css("display", "block");
     $(".overMask").show();
 }
+
 function isWinGame(board) {
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
@@ -207,6 +251,7 @@ function isWinGame(board) {
     }
     return false;
 }
+
 function moveLeft() {
     if (!canMoveLeft(board)) {
         generateOneNumber();
