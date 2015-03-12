@@ -75,28 +75,17 @@ body {
 }
 
 .number-cell {
-    /*border-radius: 10px;*/
     font-family: "Microsoft YaHei", "微软雅黑";
     font-weight: bold;
-    /*font-size: 60px;*/
-    /*line-height: 100px;*/
     text-align: center;
 
     position: absolute;
 }
 
 .overMask {
-    /*border: 1px solid red;*/
     position: absolute;
-    height: 500px;
-    width: 500px;
-    opacity: 0.75;
-    margin-top: -500px;
-    margin-left: 432px;
-    line-height: 500px;
+    opacity: 0.65;
     background: #000;
-    text-indent: 50px;
-    border-radius: 10px;
     z-index: 1;
 }
 

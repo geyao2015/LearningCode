@@ -34,21 +34,41 @@ function adjustForMobile() {
     $(".header").css("left", cellWidth * 3 + "px");
     $(".header h2").css("margin-left", -(gridContainerWidth / 2 - cellDistance) + "px");
 
+    //调整grid-container
     var theGridContainer = $("#grid-container");
-    theGridContainer.css("width", gridContainerWidth + "px");
-    theGridContainer.css("height", gridContainerWidth + "px");
-    theGridContainer.css("border-radius", gridContainerWidth * 0.02 + "px");
+    theGridContainer.css({
+        "width": gridContainerWidth + "px",
+        "height": gridContainerWidth + "px",
+        "border-radius": gridContainerWidth * 0.02 + "px"
+    });
 
-    $(".grid-cell").css("height", cellWidth + "px");
-    $(".grid-cell").css("width", cellWidth + "px");
-    $(".grid-cell").css("border-radius", gridContainerWidth * 0.02 + "px");
+    //调整grid-cell
+    $(".grid-cell").css({
+        "height": cellWidth + "px",
+        "width": cellWidth + "px",
+        "border-radius": gridContainerWidth * 0.02 + "px"
+    });
+
+    //调整遮罩层
+    var mask = $(".overMask");
+    mask.css({
+        "width": gridContainerWidth,
+        "height": gridContainerWidth,
+        "border-radius": gridContainerWidth * 0.02 + "px",
+        "margin-top": -(gridContainerWidth + 15),
+        "margin-left": (screenWidth - gridContainerWidth) / 2
+    });
+    $(".overMask a").css({
+        "height": "50px",
+        "line-height": "50px"
+    });
+
 
 }
 function init() {
     //初始化函数
     score = 0;
     updateScore();
-    //$(".overMask").css("display", "none");
     $(".overMask").hide();
 
     for (var i = 0; i < 4; i++) {
@@ -91,15 +111,17 @@ function updateBoardView() {
 
             }
             else {
-                theNumberCell.css("width", cellWidth + "px");
-                theNumberCell.css("height", cellWidth + "px");
-                theNumberCell.css("line-height", cellWidth + "px");
-                theNumberCell.css("border-radius", gridContainerWidth * 0.02 + "px");
-                theNumberCell.css("top", getPosTop(i, j));
-                theNumberCell.css("left", getPosLeft(i, j));
-                theNumberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
-                theNumberCell.css("color", getNumberColor(board[i][j]));
-                theNumberCell.css("font-size", cellWidth * 0.65 + "px");
+                theNumberCell.css({
+                    "width": cellWidth + "px",
+                    "height": cellWidth + "px",
+                    "line-height": cellWidth + "px",
+                    "border-radius": gridContainerWidth * 0.02 + "px",
+                    "top": getPosTop(i, j),
+                    "left": getPosLeft(i, j),
+                    "background-color": getNumberBackgroundColor(board[i][j]),
+                    "color": getNumberColor(board[i][j]),
+                    "font-size": cellWidth * 0.65 + "px"
+                });
                 theNumberCell.html(board[i][j]);
                 if (board[i][j] >= 128) {
                     theNumberCell.css("font-size", cellWidth * 0.5);
