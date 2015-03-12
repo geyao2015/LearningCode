@@ -5,9 +5,22 @@
 function showNumberWithAnimation(i, j, randNumber) {
 
     var numberCell = $("#number-cell-" + i + "-" + j);
+
     numberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
     numberCell.css("color", getNumberColor(board[i][j]));
     numberCell.html(board[i][j]);
+
+    //theNumberCell.css("top", getPosTop(i, j));
+    //theNumberCell.css("left", getPosLeft(i, j));
+    //theNumberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
+    //theNumberCell.css("color", getNumberColor(board[i][j]));
+
+    //theNumberCell.css("width", cellWidth + "px");
+    //theNumberCell.css("height", cellWidth + "px");
+    //theNumberCell.css("font-size", cellWidth * 0.62 + "px");
+    numberCell.css("border-radius", gridContainerWidth * 0.02 + "px");
+    numberCell.css("line-height", cellWidth + "px");
+    numberCell.css("font-size", cellWidth * 0.65 + "px");
 
     numberCell.animate({
         width: cellWidth,
