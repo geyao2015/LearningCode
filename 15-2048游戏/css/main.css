@@ -22,44 +22,44 @@ body {
 }
 
 /*清除浮动-通用版*/
-.clearfix:after {
-    content: '';
-    display: block;
-    clear: both;
-    height: 0;
-    visibility: hidden;
-}
+/*.clearfix:after {*/
+    /*content: '';*/
+    /*display: block;*/
+    /*clear: both;*/
+    /*height: 0;*/
+    /*visibility: hidden;*/
+/*}*/
 
 .header {
     margin: 0 auto;
-    width: 500px;
+    width: 100%;
     font-family: "Microsoft YaHei", "微软雅黑";
     position: relative;
-    height: 100px;
+    /*left: 150px;*/
     clear: both;
-    overflow: hidden;
-    height: 100px;
 }
 
 .header h2 {
-    font-size: 40px;
+    font-size: 55px;
     display: inline-block;
     color: #776E65;
-    margin: 10px 20px;
+    margin: 10px 14px 10px -100px;
+    position: absolute;
+
 }
 
 .header a {
     text-decoration: none;
     background: #8F7A66;
     display: inline-block;
-    height: 40px;
-    width: 150px;
-    line-height: 40px;
+    height: 45px;
+    width: 120px;
+    line-height: 50px;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #ffffff;
     text-align: center;
-    margin-left: 175px;
+    margin: 10px;
 
 }
 
@@ -67,22 +67,16 @@ body {
     font-family: "Microsoft YaHei", "微软雅黑";
     font-size: 20px;
     color: #8F7A66;
-    margin-left: 375px;
-    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .grid-container {
-    margin: 0 auto;
-    width: 460px;
-    height: 460px;
-    padding: 20px;
+    margin: 15px auto;
     background-color: #bbada0;
-    border-radius: 10px;
     position: relative;
 }
 
 .grid-cell {
-    border: 1px solid #888;
     width: 100px;
     height: 100px;
     background: #ccc0b3;

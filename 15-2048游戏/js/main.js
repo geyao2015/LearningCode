@@ -6,13 +6,45 @@ var board = new Array(),
     score = 0,
     hasConflicted = new Array();//用于防止二次碰撞
 
+screenWidth = $(window).width();
+gridContainerWidth = screenWidth * 0.92;
+cellWidth = screenWidth * 0.18;
+cellDistance = screenWidth * 0.04;
 $(function () {
     newGame();
 });
 
 function newGame() {
-    //初始化棋盘格
+    //alert(screenWidth);
+    //alert(gridContainerWidth);
+    //alert(screenWidth* 0.18);
+    //alert(cellDistance);
+    adjustForMobile();
+    //初始化
     init();
+}
+function adjustForMobile() {
+    //调整grid以根据适应移动端；
+    if (screenWidth >= 500) {
+        //适用于网页
+        gridContainerWidth = 500;
+        cellWidth = 100;
+        cellDistance = 20;
+    }
+    //$(".header").css("left", (screenWidth-gridContainerWidth)/2+(cellWidth*4) + "px");
+    $(".header").css("width", gridContainerWidth + "px");
+    $(".header").css("left", cellWidth*3 + "px");
+    $(".header h2").css("margin-left", -(gridContainerWidth / 2 - cellDistance) + "px");
+
+    var theGridContainer = $("#grid-container");
+    theGridContainer.css("width", gridContainerWidth + "px");
+    theGridContainer.css("height", gridContainerWidth + "px");
+    theGridContainer.css("border-radius", gridContainerWidth * 0.02 + "px");
+
+    $(".grid-cell").css("height", cellWidth + "px");
+    $(".grid-cell").css("width", cellWidth + "px");
+    $(".grid-cell").css("border-radius", gridContainerWidth * 0.02 + "px");
+
 }
 function init() {
     //初始化函数
@@ -41,6 +73,7 @@ function init() {
     generateOneNumber();
 
     updateBoardView();
+
 }
 
 function updateBoardView() {
@@ -54,24 +87,28 @@ function updateBoardView() {
 
             if (board[i][j] == 0) {
                 //此时不显示数字
-                theNumberCell.css("width", "0px");
-                theNumberCell.css("height", "0px");
-                theNumberCell.css("top", getPosTop(i, j) + 50);
-                theNumberCell.css("left", getPosLeft(i, j) + 50);
+                theNumberCell.css("width", 0);
+                theNumberCell.css("height", 0);
+                theNumberCell.css("top", getPosTop(i, j) + cellWidth / 2);
+                theNumberCell.css("left", getPosLeft(i, j) + cellWidth / 2);
 
             }
             else {
-                theNumberCell.css("width", "100px");
-                theNumberCell.css("height", "100px");
+                theNumberCell.css("width", cellWidth + "px");
+                theNumberCell.css("height", cellWidth + "px");
+                theNumberCell.css("line-height", cellWidth + "px");
+                theNumberCell.css("font-size", cellWidth * 0.62 + "px");
+                theNumberCell.css("border-radius", gridContainerWidth * 0.02 + "px");
+
                 theNumberCell.css("top", getPosTop(i, j));
                 theNumberCell.css("left", getPosLeft(i, j));
                 theNumberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
                 theNumberCell.css("color", getNumberColor(board[i][j]));
+                theNumberCell.css("font-size", cellWidth * 0.65 + "px");
                 theNumberCell.html(board[i][j]);
                 if (board[i][j] >= 128) {
-                    theNumberCell.css("font-size", "35px");
+                    theNumberCell.css("font-size", cellWidth * 0.5);
                 }
-
             }
             hasConflicted[i][j] = false;
         }

@@ -2,10 +2,10 @@
  * Created by 岳 on 2015/3/10.
  */
 function getPosTop(i, j) {
-    return 20 + 120 * i;
+    return cellDistance + (cellDistance + cellWidth) * i;
 }
 function getPosLeft(i, j) {
-    return 20 + 120 * j;
+    return cellDistance + (cellDistance + cellWidth) * j;
 }
 
 function getNumberBackgroundColor(number) {

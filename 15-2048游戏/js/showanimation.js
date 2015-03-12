@@ -10,8 +10,8 @@ function showNumberWithAnimation(i, j, randNumber) {
     numberCell.html(board[i][j]);
 
     numberCell.animate({
-        width: "100px",
-        height: "100px",
+        width: cellWidth,
+        height: cellWidth,
         top: getPosTop(i, j),
         left: getPosTop(j, j)
     }, 100)
