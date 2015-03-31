@@ -36,4 +36,6 @@ content：
 
 16.bootstrap demos 2015年03月14日
 
-17.Less学习Demo 2015年03月16日
+17.Less学习Demo 2015年03月16日  
+
+18.信息滚动效果 2015年3月31日
