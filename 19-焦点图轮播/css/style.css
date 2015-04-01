@@ -17,6 +17,7 @@
     position: absolute;
     width: 7000px;
     z-index: 1;
+    transition: left 1s;
 }
 
 .list li {
