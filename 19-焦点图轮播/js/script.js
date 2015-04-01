@@ -1,103 +1,106 @@
-/**
- * Created by 岳 on 2015/4/1.
- */
 window.onload = function () {
-    var container=document.getElementById("container");
-    var next = document.getElementById("next");
-    var buttoms = document.getElementById("buttoms").getElementsByTagName("span");
-    var pre = document.getElementById("pre");
-    var list = document.getElementById("list");
-    var index = 0;
-    var timer;//定时器自动轮播
+    var container = document.getElementById('container');
+    var list = document.getElementById('list');
+    var buttons = document.getElementById('buttons').getElementsByTagName('span');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var index = 1;
+    var len = 5;
+    var animated = false;
+    var interval = 3000;
+    var timer;
 
-    //改变index
-    function changeIndex() {
-        //todo:对应不上，还有bug
-        for (var i = 0; i < 5; i++) {
-            if (buttoms[i].className == "active") {
-                buttoms[i].className = "";
+    function animate(offset) {
+        if (offset == 0) {
+            return;
+        }
+        animated = true;
+        var time = 300;
+        var inteval = 10;
+        var speed = offset / (time / inteval);
+        var left = parseInt(list.style.left) + offset;
+        var go = function () {
+            if ((speed > 0 && parseInt(list.style.left) < left) || (speed < 0 && parseInt(list.style.left) > left)) {
+                list.style.left = parseInt(list.style.left) + speed + 'px';
+                setTimeout(go, inteval);
+            }
+            else {
+                list.style.left = left + 'px';
+                if (left > -200) {
+                    list.style.left = -600 * len + 'px';
+                }
+                if (left < (-600 * len)) {
+                    list.style.left = '-600px';
+                }
+                animated = false;
+            }
+        }
+        go();
+    }
+
+    function showButton() {
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].className == 'on') {
+                buttons[i].className = '';
                 break;
             }
         }
-        buttoms[index].className = "active";
+        buttons[index - 1].className = 'on';
     }
 
-    //轮播动画
-    function animate(distance) {
-        var time = 2000;
-        var interval = 10;
-        var speed = distance / (time / interval);
-
-        var newLeft = parseInt(list.style.left) + distance;
-
-        function go() {
-            if ((speed < 0 && (parseInt(list.style.left) > newLeft)) || (speed > 0 && (parseInt(list.style.left) < newLeft))) {
-                list.style.left = parseInt(list.style.left) + speed + 'px';
-                setTimeout(go, interval);
-            }
-            else {
-                list.style.left = newLeft + 'px';
-                changeIndex();
-                if (newLeft <= -6000) {
-                    list.style.left = "-1000px";
-                }
-                if (newLeft >= 0) {
-                    list.style.left = "-5000px";
-                }
-            }
-        }
-
-        go();
-
-    }
-
-    //自动轮播
-    function autoPlay() {
-        timer = setInterval(function () {
+    function play() {
+        timer = setTimeout(function () {
             next.onclick();
-        }, 2000)
+            play();
+        }, interval);
     }
 
-    autoPlay();
-    function stopPlay() {
-        //alert(1)
-        //clearInterval(timer);
+    function stop() {
+        clearTimeout(timer);
     }
 
     next.onclick = function () {
+        if (animated) {
+            return;
+        }
         if (index == 5) {
-            index = 0;
+            index = 1;
         }
         else {
-            index++;
+            index += 1;
         }
-        //changeIndex();
-        animate(-1000);
-
+        animate(-600);
+        showButton();
     }
-    pre.onclick = function () {
-        if (index == -1) {
-            index = 4;
+    prev.onclick = function () {
+        if (animated) {
+            return;
+        }
+        if (index == 1) {
+            index = 5;
         }
         else {
-            index--;
+            index -= 1;
         }
-        //changeIndex();
-        animate(1000);
+        animate(600);
+        showButton();
     }
-    //绑定按钮
-    for (var i = 0; i < buttoms.length; i++) {
-        buttoms[i].onclick = function () {
-            if (!this.className) {
-                var toIndex = this.getAttribute("index");
-                var moveDistance = (toIndex - index) * -1000;
-                animate(moveDistance);
-                index = toIndex;
-                changeIndex();
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+            if (animated) {
+                return;
             }
+            if (this.className == 'on') {
+                return;
+            }
+            var myIndex = parseInt(this.getAttribute('index'));
+            var offset = -600 * (myIndex - index);
+            animate(offset);
+            index = myIndex;
+            showButton();
         }
     }
-    container.onmouseover = stopPlay();
-    container.onmouseout = autoPlay();
-
+    container.onmouseover = stop;
+    container.onmouseout = play;
+    play();
 }

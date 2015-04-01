@@ -7,26 +7,25 @@
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 </head>
 <body>
-<div id="container" class="container">
-    <h2>焦点轮播图效果</h2>
-    <ul id="list" class="list" style="left: -1000px">
-        <li><img src="imgs/5.jpg" alt="焦点图"/></li>
-        <li><img src="imgs/1.jpg" alt="焦点图"/></li>
-        <li><img src="imgs/2.jpg" alt="焦点图"/></li>
-        <li><img src="imgs/3.jpg" alt="焦点图"/></li>
-        <li><img src="imgs/4.jpg" alt="焦点图"/></li>
-        <li><img src="imgs/5.jpg" alt="焦点图"/></li>
-        <li><img src="imgs/1.jpg" alt="焦点图"/></li>
-    </ul>
-    <div id="buttoms" class="btns">
-        <span index="0" class="active"></span>
-        <span index="1"></span>
+<div id="container">
+    <div id="list" style="left: -600px;">
+        <img src="img/5.jpg" alt="1"/>
+        <img src="img/1.jpg" alt="1"/>
+        <img src="img/2.jpg" alt="2"/>
+        <img src="img/3.jpg" alt="3"/>
+        <img src="img/4.jpg" alt="4"/>
+        <img src="img/5.jpg" alt="5"/>
+        <img src="img/1.jpg" alt="5"/>
+    </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
         <span index="2"></span>
         <span index="3"></span>
         <span index="4"></span>
+        <span index="5"></span>
     </div>
-    <a id="pre" class="pre" href="#">&lsaquo;</a>
-    <a id="next" class="next" href="#">&rsaquo;</a>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
 </div>
 <script type="text/javascript" src="js/script.js"></script>
 </body>
