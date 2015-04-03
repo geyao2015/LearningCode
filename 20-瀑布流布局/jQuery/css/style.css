@@ -1,0 +1,25 @@
+.container {
+    margin: 10px auto;
+    position: relative;
+    /*border: 1px solid #000;*/
+    clear: both;
+    /*overflow: hidden;*/
+}
+
+.box {
+    float: left;
+    /*padding: 10px;*/
+    /*position: absolute;*/
+    padding:0 5px 5px 0
+}
+
+.pic {
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    width: 175px;
+}
+
+.pic img {
+    width: 100%;
+}
