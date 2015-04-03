@@ -1,16 +1,16 @@
 .container {
-    /*width: 1000px;*/
-    margin: 0 auto;
+    margin: 10px auto;
     position: relative;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     clear: both;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .box {
     float: left;
-    padding: 10px;
+    /*padding: 10px;*/
     /*position: absolute;*/
+    padding:0 5px 5px 0
 }
 
 .pic {
