@@ -1,0 +1,24 @@
+/*nav*/
+.nav-bar {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  height: 54px;
+  background-color: #FFFFFF;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 36px;
+  padding: 8px 16px;
+
+}
+.nav-container>li {
+  float: left;
+}
+.nav-container .item {
+  display: inline-block;
+  font-family: Verdana,sans-serif;
+}
